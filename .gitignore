@@ -1,0 +1,42 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# Byte-compiled / optimized
+*.pyc
+
+# Storage & embeddings (large binary data — not tracked)
+storage/embeddings/
+storage/rss_cache/
+
+# Logs
+logs/
+
+# Hugging Face model cache (large downloads)
+.cache/
+models/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Secrets / env files
+.env
+*.env

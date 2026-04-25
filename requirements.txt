@@ -1,0 +1,31 @@
+# requirements.txt — Geopolitical News Intelligence System (MVP v1)
+# Python 3.12.2 | Windows | Local-first | Zero external paid APIs
+
+# ── RSS Ingestion ──────────────────────────────────────────────────────
+feedparser==6.0.11
+
+# ── HTML Cleaning & Boilerplate Removal ───────────────────────────────
+beautifulsoup4==4.12.3
+lxml==5.2.2
+trafilatura==1.12.2
+newspaper3k==0.2.8            # fallback boilerplate remover
+
+# ── Text Processing ────────────────────────────────────────────────────
+spacy==3.7.5                  # sentence segmentation (primary)
+# After pip install, run: python -m spacy download en_core_web_sm
+nltk==3.8.1                   # sentence segmentation (fallback)
+
+# ── Embeddings ─────────────────────────────────────────────────────────
+sentence-transformers==3.0.1  # all-MiniLM-L6-v2
+numpy==1.26.4
+
+# ── Classification ─────────────────────────────────────────────────────
+transformers==4.42.4          # distilbert-base-uncased via zero-shot pipeline
+torch==2.3.1                  # CPU inference
+
+# ── Clustering ─────────────────────────────────────────────────────────
+hdbscan==0.8.38.post1
+
+# ── Utilities ──────────────────────────────────────────────────────────
+requests==2.32.3              # used internally by trafilatura/newspaper
+python-dateutil==2.9.0
