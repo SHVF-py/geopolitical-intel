@@ -75,9 +75,10 @@ def _run_hdbscan(embeddings: np.ndarray, min_cluster_size: int) -> np.ndarray:
     """
     Run HDBSCAN and return cluster label array.
     Label -1 = noise (unclustered).
+    Uses sklearn.cluster.HDBSCAN (available since scikit-learn 1.3, pre-built wheels).
     """
-    import hdbscan
-    clusterer = hdbscan.HDBSCAN(
+    from sklearn.cluster import HDBSCAN
+    clusterer = HDBSCAN(
         min_cluster_size=min_cluster_size,
         metric="cosine",
         cluster_selection_method="eom",
